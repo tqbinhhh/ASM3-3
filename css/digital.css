@@ -1,0 +1,169 @@
+
+:root {
+    --primary-color: #5D5FEF; 
+    --card-background: #FFFFFF; 
+    --text-color: #2c3e50; 
+    --light-text-color: #7f8c8d; 
+    --border-color: #eaedf1;
+}
+
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    background-color: #0052cc; 
+    padding: 25px; 
+    border-radius: 12px;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.75rem 0;
+}
+
+p {
+    color: var(--light-text-color);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+.charter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    gap: 25px; /
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.timeline {
+    grid-row: span 2;
+}
+
+
+/* Goals */
+.goals .goal-item:not(:last-child) { margin-bottom: 1.5rem; }
+.goals h3 i {
+    color: var(--text-color); 
+    margin-right: 10px;
+}
+
+/* Scopes */
+.scopes .scope-item:not(:last-child) { margin-bottom: 1.5rem; }
+.scopes .scope-item h3 {
+    display: block; 
+}
+.scopes h3 { font-weight: 700; }
+
+/* Team */
+.team-member {
+    display: flex;
+    align-items: center;
+}
+.team-member:not(:last-child) { margin-bottom: 1.25rem; }
+.team-member > i {
+    margin-right: 15px;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+.team-member p { line-height: 1.4; }
+.team-member .member-title { font-weight: 600; color: var(--text-color); }
+.team-member .member-name { font-size: 0.85rem; }
+
+/* Primary */
+.primary-item {
+    display: flex;
+    align-items: flex-start;
+}
+.primary-item:not(:last-child) { margin-bottom: 1.25rem; }
+.primary-item > i {
+    margin-right: 15px;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    padding-top: 4px;
+}
+.primary-item p { padding-top: 4px; }
+
+/* Timeline */
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.timeline-list::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    bottom: 18px;
+    width: 2px;
+    background-color: var(--border-color);
+}
+.timeline-item {
+    position: relative;
+    padding-left: 55px;
+}
+.timeline-item:not(:last-child) { padding-bottom: 25px; }
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border: 4px solid var(--card-background); 
+}
+.timeline-content h3 { font-size: 0.95rem; }
+
+/* --- RESPONSIVE CHO MÀN HÌNH NHỎ HƠN --- */
+@media (max-width: 1024px) {
+    .charter-grid {
+        grid-template-columns: 1fr 1fr; /* 2 cột */
+    }
+    .timeline {
+        grid-column: span 2; /* Timeline chiếm trọn 2 cột */
+        grid-row: auto;
+    }
+}
+@media (max-width: 768px) {
+    body { padding: 1rem; }
+    .charter-grid {
+        grid-template-columns: 1fr; /* 1 cột */
+    }
+    .timeline {
+        grid-column: span 1; /* Reset lại cho 1 cột */
+    }
+}
