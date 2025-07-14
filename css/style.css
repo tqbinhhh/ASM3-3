@@ -1,14 +1,8 @@
 :root {
-    --primary-color: #3498db;
+    --primary-color: #0d6efd;
     --dark-grey: #495057;
-    --light-grey: #f1f3f5;
+    --light-grey: #f8f9fa;
     --border-color: #dee2e6;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -17,122 +11,24 @@ body {
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .hidden {
     display: none !important;
 }
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-}
-
 ul {
     list-style: none;
+    padding-left: 0;
 }
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-
-/* --- REUSABLE COMPONENTS --- */
-.section-title {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 24px;
-}
-
-.section-title-center {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 40px;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-
-
-.form-control {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-}
-
 
 /* --- BANNER & NAVBAR --- */
-.banner-img {
+.banner {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/banner.jpg);
     background-size: cover;
     background-position: center;
     height: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
 }
 
-.banner-content .inner-name {
-    font-size: 48px;
-    font-weight: 600;
-}
-
-.banner-content .inner-desc {
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: #fff;
-    position: relative;
-}
-
-.navbar a {
-    color: #343a40;
-}
-
-.nav-item {
-    padding: 20px 30px;
-    text-align: center;
-    border-left: 1px solid var(--light-grey);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.nav-item:last-of-type {
-    border-right: 1px solid var(--light-grey);
-}
-
-.nav-item i {
-    color: var(--primary-color);
-}
-
-.profile img {
+.nav-profile-img {
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -141,111 +37,21 @@ img {
     margin-top: -80px;
 }
 
-
-/* --- INFO SECTION --- */
-.info-section {
-    padding: 50px 0;
-    background-color: var(--light-grey);
+.navbar-nav .nav-link {
+    border-left: 1px solid var(--border-color);
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+.navbar-nav .nav-item:last-child .nav-link {
+    border-right: 1px solid var(--border-color);
 }
 
-.personal-info #error-message {
-    color: #e03131;
-    margin-top: 10px;
-}
-
-.social-icons {
-    margin-top: 16px;
+.navbar-nav .nav-item:nth-child(3) {
+    width: 220px;
     display: flex;
-    gap: 16px;
+    justify-content: center;
 }
 
-.social-icons i {
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--primary-color);
-}
-
-
-/* --- JOB INFO SECTION --- */
-.info-job {
-    padding: 60px 0;
-}
-
-.job-grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.section {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 24px;
-}
-
-.section-header {
-    padding: 0 0 16px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.section-header h2 {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.section-header i {
-    font-size: 36px;
-    color: #adb5bd;
-}
-
-.section-content {
-    border-top: 1px solid var(--light-grey);
-    padding-top: 16px;
-}
-
-.entry {
-    margin-bottom: 24px;
-}
-
-.entry:last-child {
-    margin-bottom: 0;
-}
-
-.entry h4 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.entry .time {
-    font-size: 14px;
-    font-style: italic;
-    margin: 4px 0 8px 0;
-}
-
-.highlight-badge {
-    background-color: var(--primary-color);
-    color: #fff;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 12px;
-    margin-left: 8px;
-}
-
-.hobbies {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    text-align: center;
-}
-
+/* --- INFO JOB SECTION --- */
 .hobby-item i {
     font-size: 20px;
     color: var(--primary-color);
@@ -259,214 +65,100 @@ img {
     margin-bottom: 8px;
 }
 
-.bar {
-    display: flex;
-    gap: 8px;
-    margin: 8px 0 16px 0;
-    height: 4px;
+/* --- ADVANCED COLLAPSIBLE FUNCTIONALITY (FIXED) --- */
+#info-job .card {
+    border: 1px solid #e9ecef;
 }
 
-.bar span {
-    border-radius: 2px;
+#info-job .card-title {
+    font-weight: 600;
 }
 
-.bar .blue {
-    background-color: var(--primary-color);
-    flex-basis: 33.33%;
+/* Thêm đường kẻ ngang giữa các mục trong cùng 1 thẻ */
+#info-job .entry:not(:first-child) {
+    border-top: 1px solid #ced4da;
+    padding-top: 1rem;
+    margin-top: 1rem;
 }
 
-.bar .gray {
-    background-color: var(--border-color);
-    flex-basis: 33.33%;
+/* Tùy chỉnh lại kiểu danh sách */
+#info-job .custom-list {
+    list-style: none;
+    padding-left: 0;
 }
 
-
-/* --- COLLAPSIBLE CARD FUNCTIONALITY --- */
-.collapsible-card {
+#info-job .custom-list li {
     position: relative;
-    transition: box-shadow 0.3s ease-in-out;
-    padding: 24px;
+    padding-left: 20px;
+    margin-bottom: 8px;
 }
 
-.collapsible-card .section-content {
-    display: none;
+#info-job .custom-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    height: 1px;
+    width: 10px;
+    background: var(--dark-grey);
 }
 
-.collapsible-card .section-content.is-visible {
-    display: block;
+
+/* --- Logic ẩn hiện --- */
+.collapsible-section {
+    position: relative;
 }
 
-.toggle-btn {
-    background-color: #0d6efd;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 15px auto 0 auto;
-    display: block;
+/* Nút bấm (ĐÃ SỬA VỊ TRÍ) */
+.collapsible-section .toggle-btn {
+    position: absolute;
+    top: 40px;      /* Đẩy nút xuống dưới một chút */
+    left: 150px;    /* Đẩy nút sang phải một chút */
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: all 0.2s ease-in-out;
 }
 
-.collapsible-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.collapsible-card:hover .toggle-btn {
+/* 1. Khi di chuột vào thẻ HOẶC 2. Khi thẻ đang ở trạng thái mở -> thì hiện nút */
+.collapsible-section:hover .toggle-btn,
+.collapsible-section.is-open .toggle-btn {
     opacity: 1;
     visibility: visible;
 }
 
-
-/* --- AWARD & PROJECT SECTIONS --- */
-.award-section {
-    padding: 60px 0;
-    background-color: var(--light-grey);
+/* Nội dung */
+.collapsible-section .section-content {
+    display: none;
+    margin-top: 20px;
 }
 
-.award-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 50px;
+/* Khi thẻ đang ở trạng thái mở -> thì hiện nội dung (ĐÃ SỬA) */
+.collapsible-section.is-open .section-content {
+    display: block !important; /* Dùng !important để đảm bảo nội dung chắc chắn hiện ra */
 }
 
-.award-item {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding-bottom: 30px;
-    border-bottom: 2px solid #e9ecef;
-}
-
-.award-item img {
-    width: 100px;
-    flex-shrink: 0;
-}
-
-.award-item h3 {
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.award-full-width {
-    grid-column: 1 / -1;
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.project-section {
-    padding: 60px 0;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.project-card {
+/* --- PROJECT SECTION --- */
+#project-section .card {
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
-.project-card .project-body {
-    border-top: 1px solid var(--border-color);
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-title {
-    font-weight: 600;
-    padding: 16px;
+#project-section .card-header {
     border-bottom: 1px solid var(--border-color);
-    text-transform: uppercase;
+    background-color: #fff;
 }
 
-.project-title .button {
-    padding: 10px 15px 10px 15px;
-    background: #337be6;
-    border-radius: 6px;
-    margin-top: 10px;
+#project-section .card-body {
+    border-bottom: 1px solid var(--border-color);
 }
 
-.project-title .button a {
-    color: #fff;
-}
-
-.project-title .button:hover {
-    padding: 10px 15px 10px 15px;
-    background: #e76824;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
-.project-info {
-    display: flex;
-    gap: 16px;
-    padding: 16px;
-    align-items: center;
-}
-
-.project-info .year {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 16px;
-    font-size: 14px;
-}
-
-.project-card table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: auto;
-}
-
-.project-card table td {
-    padding: 12px 16px;
+#project-section table td {
+    padding: 0.75rem;
     vertical-align: top;
-    font-size: 10px;
-    border-top: 1px solid var(--light-grey);
 }
 
-.project-card table td:first-child {
-    font-weight: 500;
-    width: 90px;
+#project-section table tr:not(:last-child) td {
+    border-bottom: 1px solid var(--border-color);
 }
-
-
-/* --- FOOTER --- */
-.footer {
-    background-color: var(--light-grey);
-    text-align: center;
-    padding: 40px 0;
-}
-
-.footer ul {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer li a {
-    color: #868e96;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #0d6efd;
-}
-
-.footer li a i {
-    font-size: 24px;
+* a{
+    text-decoration: none;
 }
