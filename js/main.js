@@ -28,26 +28,24 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     /**
-     * Xử lý chức năng "Xem thêm" / "Ẩn bớt" cho các thẻ có thể thu gọn.
+     * Xử lý chức năng "View More" / "View Less" cho các thẻ.
+     * Logic: Dùng class '.is-open' để quản lý trạng thái mở/đóng.
      */
     const handleCollapsibleCards = () => {
-        const cards = document.querySelectorAll('.collapsible-card');
+        const cards = document.querySelectorAll('.collapsible-section');
 
         cards.forEach(card => {
-            const content = card.querySelector('.section-content');
+            const toggleButton = card.querySelector('.toggle-btn');
+            const sectionContent = card.querySelector('.section-content');
 
-            // Tạo và thêm nút
-            const toggleButton = document.createElement('button');
-            toggleButton.textContent = 'View More';
-            toggleButton.classList.add('toggle-btn');
-            card.appendChild(toggleButton);
+            if (!toggleButton || !sectionContent) return;
 
-            // Gán sự kiện click cho nút
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('is-visible');
-                
-                // Cập nhật lại chữ trên nút dựa vào trạng thái hiển thị
-                if (content.classList.contains('is-visible')) {
+                // Thêm hoặc xóa class 'is-open' trên thẻ cha
+                card.classList.toggle('is-open');
+
+                // Cập nhật lại chữ trên nút dựa vào class 'is-open'
+                if (card.classList.contains('is-open')) {
                     toggleButton.textContent = 'View Less';
                 } else {
                     toggleButton.textContent = 'View More';
