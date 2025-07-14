@@ -132,7 +132,7 @@ ul {
     margin-top: 20px;
 }
 
-/* Khi thẻ đang ở trạng thái mở -> thì hiện nội dung (ĐÃ SỬA) */
+/* Khi thẻ đang ở trạng thái mở -> thì hiện nội dung */
 .collapsible-section.is-open .section-content {
     display: block !important; /* Dùng !important để đảm bảo nội dung chắc chắn hiện ra */
 }
